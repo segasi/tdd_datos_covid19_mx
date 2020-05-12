@@ -226,7 +226,7 @@ foo <-
 set.seed(15)
 foo %>% 
   ggplot(aes(x = dias_desde_inicio_sintomas)) +
-  geom_line(aes(y = aumento_diario_acumulado, group = fecha_sintomas),
+  geom_line(aes(y = num_casos, group = fecha_sintomas),
             size = 1, 
             alpha = 0.6) +
   geom_point(aes(y = puntito_final, group = fecha_sintomas), color = "salmon", size = 2) + 
