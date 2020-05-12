@@ -288,6 +288,6 @@ mx_datos_todos <- limpiar_datos_abiertos(mx_datos_todos)
 # OJO: el warning que aparece después de este paso se debe a que los valores 9999-99-99 en la variable fecha_def fueron transformados en NAs
 
 ### Eliminar las observaciones posteriores al 8 de mayo. No las incluímos porque rompen la simetría en el número de facetas de la tercer gráfica ----
-# mx_datos_todos <-
-#   mx_datos_todos %>%
-#   filter(fecha_actualizacion < as_date("2020-05-11"))
+mx_datos_todos <-
+  mx_datos_todos %>%
+  filter(fecha_actualizacion < as_date("2020-05-11"))
