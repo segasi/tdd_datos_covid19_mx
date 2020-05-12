@@ -198,7 +198,7 @@ foo <-
   group_by(fecha_actualizacion, fecha_sintomas) %>% 
   summarise(num_casos = n()) %>% 
   ungroup() %>% 
-  filter(fecha_sintomas >= as_date("2020-02-28")) %>% 
+  filter(fecha_sintomas >= as_date("2020-02-28")) %>%
   arrange(fecha_sintomas, fecha_actualizacion) %>%  
   mutate(mes_texto = case_when(month(fecha_sintomas) == 2 ~ "febrero",
                                month(fecha_sintomas) == 3 ~ "marzo",
@@ -217,10 +217,10 @@ foo <-
          aumento_diario = num_casos - lag(num_casos),
          aumento_diario = ifelse(is.na(aumento_diario), 0, aumento_diario),
          aumento_diario_acumulado = cumsum(aumento_diario),
-         puntito_final = ifelse(dias_desde_inicio_sintomas == max(dias_desde_inicio_sintomas), aumento_diario_acumulado, NA),
+         puntito_final = ifelse(dias_desde_inicio_sintomas == max(dias_desde_inicio_sintomas), num_casos, NA),
          texto_puntito_final_altos = ifelse(!is.na(puntito_final) & puntito_final > 725 & dias_desde_inicio_sintomas > 2, str_c(day(fecha_sintomas), " de ", mes_texto, "\n",comma(puntito_final), " casos"), ""),
          texto_puntito_final_recientes = ifelse(!is.na(puntito_final) & dias_desde_inicio_sintomas <= 5, str_c(day(fecha_sintomas), " de ", mes_texto, "\n",comma(puntito_final), " casos"), ""),
-         texto_puntito_final_estables = ifelse(!is.na(puntito_final) & puntito_final > 250 & puntito_final < 750 & dias_desde_inicio_sintomas > 20, str_c(day(fecha_sintomas), " de ", mes_texto, "\n",comma(puntito_final), " casos"), "")) %>% 
+         texto_puntito_final_estables = ifelse(!is.na(puntito_final) & puntito_final > 450 & puntito_final < 750 & dias_desde_inicio_sintomas > 20, str_c(day(fecha_sintomas), " de ", mes_texto, "\n",comma(puntito_final), " casos"), "")) %>% 
   ungroup() 
 
 set.seed(15)
