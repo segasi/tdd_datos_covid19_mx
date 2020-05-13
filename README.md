@@ -6,4 +6,4 @@ Este repo contiene el código y las gráficas que [Jorge A. Castañeda](https://
 
 Para ello, analizamos las poco más de 2.1 millones de observaciones incluidas en las 28 bases de datos [publicadas diariamente](https://www.gob.mx/salud/documentos/datos-abiertos-152127) por la Dirección General de Epidemiología (DGE) de la Secretaría de Salud (SS) entre el 13 de abril y el 10 de mayo.
 
-En todos los casos usamos el archivo originalmente publicado por la autoridad y no las versiones disponibles en la sección de Bases Históricas. En [esta liga](https://drive.google.com/drive/folders/1BTGVkrdLJl1n6AY79ysC7hrAmMBmbAgb?usp=sharing) puedes descargar los datos que usamos.
+En todos los casos usamos el archivo originalmente publicado por la autoridad y no las versiones disponibles en la sección de Bases Históricas. En [esta liga](https://drive.google.com/drive/folders/1gTyReN5MA_UWcn0VL2YcLQ6nsTFWXzuH?usp=sharing) puedes descargar los datos que usamos.
